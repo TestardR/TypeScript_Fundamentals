@@ -1,5 +1,5 @@
 // compiling and variables
-var num = 5;
+var n = 5;
 var dec = 5.232;
 var obj = {
     x: 5,
@@ -27,5 +27,23 @@ var add1 = function (x, y) { return x + y; };
 add1(123, obj3.z);
 var add2 = function (nums) { return nums.a + nums.b; };
 // unions
+// number or string
+var maybeNum = 5;
+maybeNum = 'hello';
+maybeNum = add;
+var dogCat = {
+    bark: 'bark',
+    purr: 'purr'
+};
+if (typeof dogCat === 'string') {
+    console.log('you are a string');
+}
 // casting
+// force typescript
+add(dogCat, dogCat);
 // any
+var doesAnything = function (x) {
+    console.log(x);
+};
+doesAnything({});
+doesAnything(function () { return 5; });

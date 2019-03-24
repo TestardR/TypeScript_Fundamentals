@@ -1,6 +1,6 @@
 // compiling and variables
 
-const num = 5;
+const n = 5;
 
 const dec = 5.232;
 
@@ -66,11 +66,24 @@ interface Cat {
 
 type DogCat = Dog & Cat;
 
-const dogCat: DogCat = {
+let dogCat: DogCat = {
   bark: 'bark',
   purr: 'purr'
 };
 
+if (typeof dogCat === 'string') {
+  console.log('you are a string');
+}
+
 // casting
+// force typescript
+add(dogCat as any, dogCat as any);
 
 // any
+
+const doesAnything = (x: any) => {
+  console.log(x);
+};
+
+doesAnything({});
+doesAnything(() => 5);
