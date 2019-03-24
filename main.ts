@@ -18,17 +18,36 @@ const obj1: { x: number; y: number } = {
 
 // using interface
 
-interface obj2 {
+interface myObj {
   x: number;
   y: number;
+  z?: number; // optional
 }
 
-const obj2: obj2 = {
+const obj2: myObj = {
   x: 22,
   y: 33
 };
 
+const obj3: myObj = {
+  x: 101,
+  y: 222
+};
+
+obj3.z = 22;
+
 // functions
+
+const add = (x: number, y: number) => x + y;
+const sum: (x: number, y: number) => number = (x: number, y: number) => x + y;
+
+type AddFunc = (x: number, y: number) => number;
+
+const add1: AddFunc = (x: number, y: number) => x + y;
+
+add1(123, obj3.z);
+
+const add2 = (nums: { a: number; b: number }) => nums.a + nums.b;
 
 // unions
 
