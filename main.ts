@@ -51,6 +51,26 @@ const add2 = (nums: { a: number; b: number }) => nums.a + nums.b;
 
 // unions
 
+// number or string
+let maybeNum: number | string | boolean | AddFunc = 5;
+maybeNum = 'hello';
+maybeNum = add;
+
+interface Dog {
+  bark: string;
+}
+
+interface Cat {
+  purr: string;
+}
+
+type DogCat = Dog & Cat;
+
+const dogCat: DogCat = {
+  bark: 'bark',
+  purr: 'purr'
+};
+
 // casting
 
 // any
